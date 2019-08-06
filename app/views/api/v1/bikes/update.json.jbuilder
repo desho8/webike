@@ -1,3 +1,3 @@
 json.bike do 
-  json.extract! @bike, :id, :name, :text
+  json.extract! @bike, :id, :broken, :longitude, :latitude
 end

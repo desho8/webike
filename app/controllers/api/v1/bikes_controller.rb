@@ -28,10 +28,10 @@ class Api::V1::BikesController < Api::V1::BaseController
   private
 
   def bike_params
-    # params.require(:bike).permit(:text, :username)
+    params.require(:bike).permit(:broken, :longitude, :latitude)
   end
 
   def get_bike
-    # @bike = Bike.find(params[:id])
+    @bike = Bike.find(params[:id])
   end
 end
