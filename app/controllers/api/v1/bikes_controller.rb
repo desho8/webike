@@ -1,6 +1,6 @@
 class Api::V1::BikesController < Api::V1::BaseController
-  skip_before_action verify_authencity_token, only: [:update]
-  before_action :set_bike, only: [:index, :update]
+  skip_before_action :verify_authenticity_token, only: [:update]
+  before_action :find_bike, only: [:index, :update]
 
   def index
     @bike = Bikes.all
@@ -16,7 +16,7 @@ class Api::V1::BikesController < Api::V1::BaseController
     params.require(:bike).permit(:broken, :longitude, :latitude)
   end
 
-  def get_bike
+  def find_bike
     @bike = Bike.find(params[:id])
   end
 end
