@@ -5,6 +5,7 @@ class Api::V1::TripsController < Api::V1::BaseController
   
     def create
       @trip = Trip.new(trip_params)
+      @trip.user = @user
       @trip.save
     end
   
@@ -27,6 +28,6 @@ class Api::V1::TripsController < Api::V1::BaseController
     end
   
     def trip_params
-      params.require(:trip).permit(:completed, :distance, :trip_time)
+      params.require(:trip).permit(:completed, :distance, :trip_time, :bike_id)
     end
   end
