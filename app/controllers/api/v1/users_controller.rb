@@ -1,5 +1,6 @@
 class Api::V1::UsersController < Api::v1::BaseController
   before_action :find_user, only: [:show, :update]
+  skip_before_action :verify_authenticity_token, only: [ :show, :update]
 
   def show
   end
