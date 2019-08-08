@@ -6,6 +6,7 @@ Rails.application.routes.draw do
         resources :trips, only: [:show, :create, :update], shallow: true
       end
       resources :bikes, only: [:index, :update]
+      resources :login, only: [:create]
     end
   end
 end
