@@ -13,7 +13,7 @@ class LoginController < ApplicationController
     @wechat_user ||= JSON.parse(@wechat_response.body)
   end
 
-  def login
+  def create
     @user = User.find_or_create_by(open_id: wechat_user.fetch("openid"))
     render json: {
       userId: @user.id
