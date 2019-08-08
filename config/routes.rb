@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :users, only: [:show, :update] do
-        resources :trips, only: [:show, :create, :update], shallow: true
+        resources :trips, only: [:show, :create, :update], shallow: true do
+          resources :locations, only: [:create]
+        end
       end
       resources :bikes, only: [:index, :update]
       resources :login, only: [:create]

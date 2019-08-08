@@ -1,1 +1,1 @@
-json.extract! @user, :id, :wechat_id, :money
+json.extract! @user, :id, :open_id, :money
