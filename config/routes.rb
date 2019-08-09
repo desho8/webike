@@ -7,8 +7,8 @@ Rails.application.routes.draw do
           resources :locations, only: [:create]
         end
       end
-    end
       resources :bikes, only: [:index, :update]
       post '/login', to: 'login#create'
+    end
   end
 end
