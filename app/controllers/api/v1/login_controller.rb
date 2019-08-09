@@ -1,5 +1,3 @@
-ENV['appId']
-
 class Api::V1::LoginController < Api::V1::BaseController
 
   skip_before_action :verify_authenticity_token
@@ -7,8 +5,8 @@ class Api::V1::LoginController < Api::V1::BaseController
 
     def wechat_user
       params = {
-        appId: appId,
-        secret: secret,
+        appId: ENV['appId'],
+        secret: ENV['secret'],
         js_code: params[:code],
         grant_type: authorization_code
       }
