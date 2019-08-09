@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Location.delete_all
+Trip.delete_all
 Bike.delete_all
 # User.delete_all
 
 i = 1
 50.times do
-  Bike.create(number: "000#{i}"[-4..-1], longitude: "104.08#{rand(0..65)}", latitude: "30.65#{20..99}")
+  Bike.create(number: "000#{i}"[-4..-1], longitude: "104.0#{rand(780..880)}", latitude: "30.6#{rand(510..610)}")
   i += 1
 end
 
